@@ -1,0 +1,118 @@
+/* gallery.css - Optimized for Mobile */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-0.5rem);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    touch-action: none; /* Prevents scrolling on touch devices */
+}
+
+.lightbox.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    transition: background 0.3s ease;
+}
+
+.lightbox-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Mobile-Specific Enhancements */
+@media (max-width: 768px) {
+    .gallery-grid {
+        gap: 0.5rem; /* Reduced gap for tighter layout on mobile */
+    }
+    
+    .gallery-caption {
+        transform: translateY(0); /* Captions always visible on mobile */
+        background: rgba(0,0,0,0.6);
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+        transform: translateY(0); /* No change on hover for mobile */
+    }
+    
+    .lightbox-btn {
+        padding: 0.75rem;
+        font-size: 1.25rem; /* Larger buttons for easier tapping */
+    }
+}
