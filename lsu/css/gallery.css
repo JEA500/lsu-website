@@ -97,22 +97,6 @@
 /* Mobile-Specific Enhancements */
 @media (max-width: 768px) {
     .gallery-grid {
-        gap: 0.5rem; /* Reduced gap for tighter layout on mobile */
-    }
-    
-    .gallery-caption {
-        transform: translateY(0); /* Captions always visible on mobile */
-        background: rgba(0,0,0,0.6);
-        font-size: 0.875rem;
-        padding: 0.5rem;
-    }
-    
-    .gallery-item:hover .gallery-caption {
-        transform: translateY(0); /* No change on hover for mobile */
-    }
-    
-    .lightbox-btn {
-        padding: 0.75rem;
-        font-size: 1.25rem; /* Larger buttons for easier tapping */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column size */
     }
 }
