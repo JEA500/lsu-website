@@ -57,7 +57,6 @@ header {
 
 .logo:hover {
     transform: scale(1.05) rotate(2deg);
-    animation: bounce 0.5s ease;
 }
 
 .logo-image {
@@ -65,9 +64,6 @@ header {
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .logo-image img {
@@ -77,32 +73,34 @@ header {
 }
 
 .logo-text {
-    display: none;
     font-size: 18px;
 }
 
-nav ul {
+/* Desktop Navigation */
+.desktop-nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
-nav a {
+.desktop-nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    padding: 8px 0;
+    padding: 8px 12px;
     position: relative;
     transition: all 0.3s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
-nav a:hover {
+.desktop-nav a:hover {
     color: var(--secondary);
-    transform: scale(1.1);
-    display: inline-block;
+    transform: scale(1.05);
 }
 
-nav a::after {
+.desktop-nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -114,24 +112,215 @@ nav a::after {
     transform: translateX(-50%);
 }
 
-nav a:hover::after {
+.desktop-nav a:hover::after {
     width: 100%;
-    left: 50%;
 }
 
-.mobile-menu-btn {
+/* Sidebar Toggle Button */
+.toggle-sidebar-btn {
     display: none;
     background: none;
     border: none;
     color: white;
     font-size: 24px;
+    padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    min-width: 44px;
+    min-height: 44px;
+    z-index: 300;
 }
 
-.mobile-menu-btn:hover {
+.toggle-sidebar-btn:hover {
     transform: rotate(90deg);
     color: var(--secondary);
+}
+
+.toggle-sidebar-btn[aria-expanded="true"] i {
+    transform: rotate(90deg);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    z-index: 200;
+    padding: 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sidebar.active {
+    left: 0;
+    animation: slideInSidebar 0.3s ease forwards;
+}
+
+.sidebar[aria-hidden="false"] {
+    display: block;
+}
+
+.close-sidebar-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all 0.3s ease;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.close-sidebar-btn:hover {
+    transform: rotate(90deg);
+    color: var(--secondary);
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 15px;
+}
+
+.sidebar-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-nav a:hover {
+    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+}
+
+/* Sidebar Animation */
+@keyframes slideInSidebar {
+    from { left: -300px; }
+    to { left: 0; }
+}
+
+@keyframes slideOutSidebar {
+    from { left: 0; }
+    to { left: -300px; }
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .toggle-sidebar-btn {
+        display: block;
+    }
+
+    .logo-text {
+        font-size: 16px;
+        display: block;
+    }
+
+    .logo-image {
+        width: 35px;
+        height: 35px;
+    }
+
+    .sidebar {
+        width: 250px;
+        left: -250px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    @keyframes slideInSidebar {
+        from { left: -250px; }
+        to { left: 0; }
+    }
+
+    @keyframes slideOutSidebar {
+        from { left: 0; }
+        to { left: -250px; }
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .logo-image {
+        width: 30px;
+        height: 30px;
+    }
+
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar-nav a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    @keyframes slideInSidebar {
+        from { left: -200px; }
+        to { left: 0; }
+    }
+
+    @keyframes slideOutSidebar {
+        from { left: 0; }
+        to { left: -200px; }
+    }
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .sidebar.active,
+    .toggle-sidebar-btn,
+    .close-sidebar-btn,
+    .sidebar-nav a {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* Touch Devices: Disable Hover Effects */
+@media (hover: none) and (pointer: coarse) {
+    .desktop-nav a:hover,
+    .sidebar-nav a:hover,
+    .toggle-sidebar-btn:hover,
+    .close-sidebar-btn:hover {
+        transform: none;
+        background: none;
+        color: white;
+        padding-left: 15px;
+    }
 }
 
 /* Hero Section */
@@ -666,4 +855,114 @@ footer {
     .toggle-sidebar-btn {
         display: block;
     }
+}
+
+/* apply.css - Updated with Social Media Icon Styles */
+
+/* Existing styles remain unchanged, adding new styles for social media icons */
+.social-media-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light);
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+    animation: socialPulse 0.5s ease-in-out;
+}
+
+.social-link.facebook:hover {
+    background-color: #3b5998;
+    color: white;
+}
+
+.social-link.tiktok:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.social-link.instagram:hover {
+    background-color: #E1306C;
+    color: white;
+}
+
+.social-link.linkedin:hover {
+    background-color: #0A66C2;
+    color: white;
+}
+
+.social-link.youtube:hover {
+    background-color: #FF0000;
+    color: white;
+}
+
+/* Pulse animation for social icons */
+@keyframes socialPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+}
+
+/* Ensure touch devices don't trigger hover effects */
+@media (hover: none) and (pointer: coarse) {
+    .social-link:hover {
+        transform: none;
+        box-shadow: none;
+        background-color: var(--light);
+        color: var(--primary);
+    }
+}
+
+/* Responsive adjustments for social media icons */
+@media (max-width: 768px) {
+    .social-media-list {
+        gap: 10px;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media-list {
+        gap: 8px;
+    }
+
+    .social-link {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+}
+
+table {
+    min-width: 800px; /* Ensure table is wide enough to require scrolling on mobile */
 }

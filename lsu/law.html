@@ -6,18 +6,24 @@
     <title>UPSA Law Firms - Moot Court</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-image">
                     <img src="images/lsu.jpg" alt="UPSA Law Student Union Logo">
                 </div>
+                <span class="logo-text">UPSA Law Student Union</span>
             </div>
-            <nav>
-                <button class="mobile-menu-btn">☰</button>
+            <!-- Toggle Button for Sidebar -->
+            <button class="toggle-sidebar-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
@@ -31,6 +37,25 @@
             </nav>
         </div>
     </header>
+    
+    <!-- Sidebar for Mobile -->
+    <aside class="sidebar" id="sidebar" aria-hidden="true">
+        <button class="close-sidebar-btn" aria-label="Close navigation menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#team">Executive Team</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="apply.html">Admissions</a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <!-- Law Firms Section -->
     <section class="section" id="law-firms">
@@ -46,7 +71,7 @@
                         <h3 class="member-name">Sikafuturo</h3>
                         <p class="member-role">Law Firm</p>
                         <p>Sikafuturo is dedicated to fostering sharp legal minds through rigorous moot court competitions and mentorship programs. Join us to develop your advocacy skills.</p>
-                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Learn More</a>
+                        <a href="images/sika group.jpg" class="btn btn-primary" style="margin-top: 15px;">View Firm picture</a>
                     </div>
                 </div>
                 <div class="team-member">
@@ -57,7 +82,7 @@
                         <h3 class="member-name">Eyison Dei Amoah & Associates</h3>
                         <p class="member-role">Law Firm</p>
                         <p>Eyison Dei Amoah & Associates focuses on practical legal training, offering students opportunities to engage in real-world case simulations and legal debates.</p>
-                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Learn More</a>
+                        <a href="images/eyison group.jpg" class="btn btn-primary" style="margin-top: 15px;">View Firm picture</a>
                     </div>
                 </div>
                 <div class="team-member">
@@ -68,7 +93,7 @@
                         <h3 class="member-name">Keelson Dzeketey & Associates</h3>
                         <p class="member-role">Law Firm</p>
                         <p>Keelson Dzeketey & Associates emphasizes teamwork and strategic legal thinking, preparing students for high-stakes moot court challenges.</p>
-                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Learn More</a>
+                        <a href="images/keelson group.jpg" class="btn btn-primary" style="margin-top: 15px;">View Firm picture</a>
                     </div>
                 </div>
                 <div class="team-member">
@@ -79,7 +104,7 @@
                         <h3 class="member-name">Arthur Brown & Associates</h3>
                         <p class="member-role">Law Firm</p>
                         <p>Arthur Brown & Associates provides a platform for students to hone their oral advocacy and legal research skills in a competitive yet supportive environment.</p>
-                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Learn More</a>
+                        <a href="images/arthur group.jpg" class="btn btn-primary" style="margin-top: 15px;">View Firm picture</a>
                     </div>
                 </div>
                 <div class="team-member">
@@ -90,15 +115,15 @@
                         <h3 class="member-name">Afari Asamoah & Associates</h3>
                         <p class="member-role">Law Firm</p>
                         <p>Afari Asamoah & Associates is committed to excellence in legal practice, offering students hands-on experience in moot court proceedings and case analysis.</p>
-                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Learn More</a>
+                        <a href="images/afari group.jpg" class="btn btn-primary" style="margin-top: 15px;">View Firm picture</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-  <!-- Footer -->
-  <footer>
+ <!-- Updated Footer for all HTML files (index.html, apply.html, law.html, gallery.html) -->
+<footer>
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
@@ -108,13 +133,13 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#team">Team</a></li>
+                    <li><a href="indexhtml#gallery">Gallery</a></li>
+                    <li><a href="indexhtml#contact">Contact</a></li>
+                    <li><a href="indexhtmlapply.html">Admissions</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -129,12 +154,32 @@
             </div>
             <div class="footer-column">
                 <h3>Connect With Us</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="https://vm.tiktok.com/ZMB4SQ2c9/">Tiktok</a></li>
-                    <li><a href="https://www.instagram.com/upsa_lsu?igsh=aGc1NWo0NW51NDN0">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/upsa-law-students-union-lsu/">LinkedIn</a></li>
-                    <li><a href="#">Youtube</a></li>
+                <ul class="social-media-list">
+                    <li>
+                        <a href="#" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://vm.tiktok.com/ZMB4SQ2c9/" class="social-link tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/upsa_lsu?igsh=aGc1NWo0NW51NDN0" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/upsa-law-students-union-lsu/" class="social-link linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -143,10 +188,7 @@
         </div>
     </div>
 </footer>
-
-<!-- Back to Top Button -->
-<div class="back-to-top">↑</div>
-
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'938a6ff6bc20ee03',t:'MTc0NjA1MTc0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 <script src="js/script.js"></script>
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </html>

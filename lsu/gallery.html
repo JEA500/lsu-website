@@ -5,124 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPSA Law Student Union - Gallery</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css"> <!-- Link to the enhanced gallery CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-image">
                     <img src="images/lsu.jpg" alt="UPSA Law Student Union Logo">
                 </div>
+                <span class="logo-text">UPSA Law Student Union</span>
             </div>
-            <nav>
-                <button class="mobile-menu-btn">☰</button>
+            <!-- Toggle Button for Sidebar -->
+            <button class="toggle-sidebar-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#events">Events</a></li>
                     <li><a href="index.html#team">Executive Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                     <li><a href="apply.html">Admissions</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    
+    <!-- Sidebar for Mobile -->
+    <aside class="sidebar" id="sidebar" aria-hidden="true">
+        <button class="close-sidebar-btn" aria-label="Close navigation menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#team">Executive Team</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="apply.html">Admissions</a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <!-- Gallery Section -->
     <section class="section" id="gallery">
         <div class="container">
             <h2 class="section-title">Our Gallery</h2>
             <p style="text-align: center; margin-bottom: 40px;">Explore memorable moments from our events, activities, and community engagements at UPSA Law Student Union.</p>
+            
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="" alt="Annual Law Conference">
-                    <div class="gallery-caption">Annual Law Conference 2025</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="images/2.jpg" alt="Lsu legal Clinic">
-                    <div class="gallery-caption">LSU Legal cinic</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="images/3.jpg" alt="LSU Legal">
+                <div class="gallery-item">
+                    <img src="images/2.jpg" alt="Moot Court Competition">
                     <div class="gallery-caption">Legal Clinic</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(6)">
-                    <img src="images/7.jpg" alt="LSU Legal">
+                <div class="gallery-item">
+                    <img src="images/3.jpg" alt="Legal Career Workshop">
+                    <div class="gallery-caption">Legal Career Workshop 2025</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/7.jpg" alt="Old School Night">
+                    <div class="gallery-caption">Old School Night 2025</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/8.jpg" alt="Inter-Law Faculty Debate">
                     <div class="gallery-caption">Legal Clinic</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(7)">
-                    <img src="images/8.jpg" alt="LSU Legal Clinic">
-                    <div class="gallery-caption">LSU Legal Clinic</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
+                <div class="gallery-item">
                     <img src="images/dinner3.jpg" alt="Law Students' Night">
                     <div class="gallery-caption">Law Students' dinner Night 2025</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(4)">
+                <div class="gallery-item">
                     <img src="images/dinner1.jpg" alt="LSU Dinner">
                     <div class="gallery-caption">Annual LSU Dinner 2024</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(5)">
+                <div class="gallery-item">
                     <img src="images/dinner2.jpg" alt="Rep Your School Day">
-                    <div class="gallery-caption">Lsu dinner night</div>
+                    <div class="gallery-caption">LSU dinner night</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(9)">
+                <div class="gallery-item">
                     <img src="images/madam president.jpg" alt="Legal Clinic Outreach">
                     <div class="gallery-caption">LSU dinner night</div>
                 </div>
-            </div>
-
-                <div class="gallery-item" onclick="openLightbox(8)">
+                <div class="gallery-item">
                     <img src="images/sport2.jpg" alt="Sporting Events">
                     <div class="gallery-caption">Sporting Events 2024</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(8)">
+                <div class="gallery-item">
                     <img src="images/sport4.jpg" alt="Sporting Events">
                     <div class="gallery-caption">Sporting Events 2024</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(8)">
+                <div class="gallery-item">
                     <img src="images/sport3.jpg" alt="Sporting Events">
                     <div class="gallery-caption">Sporting Events 2024</div>
+                </div>
+            </div>
 
-                    <div>
-                        <img src="images/mooting1.jpg" alt="Mooting">
-                        <div class="gallery-caption">Mooting</div>
-                    </div>
-                    <div>
-                        <img src="images/mooting2.jpg" alt="Mooting">
-                        <div class="gallery-caption">Mooting</div>
-                    </div>
-                    <div>
-                        <img src="images/mooting5.jpg" alt="Mooting">
-                        <div class="gallery-caption">Mooting</div>
-                        <div>
-                            <img src="images/mooting3.jpg" alt="Mooting">
-                            <div class="gallery-caption">Mooting</div>
-                        </div>
-                        <div>
-                            <img src="images/mooting4.jpg" alt="Mooting">
-                            <div class="gallery-caption">Mooting</div>
-                        </div>
-                        <div>
-                            <img src="images/mooting6.jpg" alt="Mooting">
-                            <div class="gallery-caption">Mooting</div>
-                        </div>
-                        <div>
-                            <img src="images/mooting7.jpg" alt="Mooting">
-                            <div class="gallery-caption">Mooting</div>
-                        </div>
-                        <div>
-                            <img src="images/mooting8.jpg" alt="Mooting">
-                            <div class="gallery-caption">Mooting</div>
-                        </div>
-
-
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox">
+                <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+                <div class="lightbox-content">
+                    <img id="lightbox-image" src="" alt="Lightbox Image">
+                    <div class="lightbox-caption" id="lightbox-caption"></div>
+                </div>
+                <button class="lightbox-btn lightbox-prev" onclick="changeImage(-1)">&#10094;</button>
+                <button class="lightbox-btn lightbox-next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+        </div>
     </section>
 
-  <!-- Footer -->
-  <footer>
+    <!-- Footer -->
+ <footer>
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
@@ -132,13 +135,13 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a href="indexhtml#home">Home</a></li>
+                    <li><a href="indexhtml#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#team">Team</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="apply.html">Admissions</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -153,12 +156,32 @@
             </div>
             <div class="footer-column">
                 <h3>Connect With Us</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="https://vm.tiktok.com/ZMB4SQ2c9/">Tiktok</a></li>
-                    <li><a href="https://www.instagram.com/upsa_lsu?igsh=aGc1NWo0NW51NDN0">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/upsa-law-students-union-lsu/">LinkedIn</a></li>
-                    <li><a href="#">Youtube</a></li>
+                <ul class="social-media-list">
+                    <li>
+                        <a href="#" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://vm.tiktok.com/ZMB4SQ2c9/" class="social-link tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/upsa_lsu?igsh=aGc1NWo0NW51NDN0" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/upsa-law-students-union-lsu/" class="social-link linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -167,10 +190,8 @@
         </div>
     </div>
 </footer>
-
-<!-- Back to Top Button -->
-<div class="back-to-top">↑</div>
-
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'938a71b778dcee0a',t:'MTc0NjA1MTgxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 <script src="js/script.js"></script>
-</body>
+<script src="js/gallery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </html>
