@@ -116,41 +116,17 @@ header {
     width: 100%;
 }
 
-/* Sidebar Toggle Button */
-.toggle-sidebar-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 44px;
-    min-height: 44px;
-    z-index: 300;
-}
-
-.toggle-sidebar-btn:hover {
-    transform: rotate(90deg);
-    color: var(--secondary);
-}
-
-.toggle-sidebar-btn[aria-expanded="true"] i {
-    transform: rotate(90deg);
-}
-
 /* Sidebar Styles */
 .sidebar {
     position: fixed;
     top: 0;
-    left: -300px;
+    right: -300px; /* Changed from left */
     width: 300px;
     height: 100%;
     background-color: var(--primary);
     color: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-    transition: left 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3); /* Adjusted shadow direction */
+    transition: right 0.3s ease; /* Changed from left */
     z-index: 200;
     padding: 20px;
     overflow-y: auto;
@@ -158,143 +134,52 @@ header {
 }
 
 .sidebar.active {
-    left: 0;
+    right: 0; /* Changed from left */
     animation: slideInSidebar 0.3s ease forwards;
 }
 
-.sidebar[aria-hidden="false"] {
-    display: block;
-}
-
-.close-sidebar-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    transition: all 0.3s ease;
-    min-width: 44px;
-    min-height: 44px;
-}
-
-.close-sidebar-btn:hover {
-    transform: rotate(90deg);
-    color: var(--secondary);
-}
-
-.sidebar-nav ul {
-    list-style: none;
-    padding: 20px 0;
-}
-
-.sidebar-nav li {
-    margin-bottom: 15px;
-}
-
-.sidebar-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
-    display: block;
-    transition: all 0.3s ease;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-}
-
-.sidebar-nav a:hover {
-    color: var(--secondary);
-    background: rgba(255, 255, 255, 0.1);
-    padding-left: 20px;
-}
-
-/* Sidebar Animation */
 @keyframes slideInSidebar {
-    from { left: -300px; }
-    to { left: 0; }
+    from { right: -300px; } /* Changed from left */
+    to { right: 0; } /* Changed from left */
 }
 
 @keyframes slideOutSidebar {
-    from { left: 0; }
-    to { left: -300px; }
+    from { right: 0; } /* Changed from left */
+    to { right: -300px; } /* Changed from left */
 }
 
 /* Mobile-Specific Styles */
 @media (max-width: 768px) {
-    .desktop-nav {
-        display: none;
-    }
-
-    .toggle-sidebar-btn {
-        display: block;
-    }
-
-    .logo-text {
-        font-size: 16px;
-        display: block;
-    }
-
-    .logo-image {
-        width: 35px;
-        height: 35px;
-    }
-
     .sidebar {
         width: 250px;
-        left: -250px;
-    }
-
-    .sidebar.active {
-        left: 0;
+        right: -250px; /* Changed from left */
     }
 
     @keyframes slideInSidebar {
-        from { left: -250px; }
-        to { left: 0; }
+        from { right: -250px; } /* Changed from left */
+        to { right: 0; } /* Changed from left */
     }
 
     @keyframes slideOutSidebar {
-        from { left: 0; }
-        to { left: -250px; }
+        from { right: 0; } /* Changed from left */
+        to { right: -250px; } /* Changed from left */
     }
 }
 
 @media (max-width: 480px) {
-    .logo-text {
-        font-size: 14px;
-    }
-
-    .logo-image {
-        width: 30px;
-        height: 30px;
-    }
-
     .sidebar {
         width: 200px;
-        left: -200px;
-    }
-
-    .sidebar.active {
-        left: 0;
-    }
-
-    .sidebar-nav a {
-        font-size: 16px;
-        padding: 8px 10px;
+        right: -200px; /* Changed from left */
     }
 
     @keyframes slideInSidebar {
-        from { left: -200px; }
-        to { left: 0; }
+        from { right: -200px; } /* Changed from left */
+        to { right: 0; } /* Changed from left */
     }
 
     @keyframes slideOutSidebar {
-        from { left: 0; }
-        to { left: -200px; }
+        from { right: 0; } /* Changed from left */
+        to { right: -200px; } /* Changed from left */
     }
 }
 
@@ -326,7 +211,7 @@ header {
 /* Hero Section */
 .hero {
     height: 80vh;
-    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url("/api/placeholder/1200/800") center/cover no-repeat;
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url("images/back.jpg") center/cover no-repeat;
     color: white;
     display: flex;
     align-items: center;
@@ -965,4 +850,8 @@ footer {
 
 table {
     min-width: 800px; /* Ensure table is wide enough to require scrolling on mobile */
+}
+
+.about-image {
+    animation: 10s;
 }

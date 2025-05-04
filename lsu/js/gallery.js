@@ -1,148 +1,145 @@
-// Enhanced gallery.js with horizontal slide effect
-let currentLightboxIndex = 0;
+// Gallery and Lightbox functionality
+let currentImageIndex = 0;
+const galleryItems = document.querySelectorAll('.gallery-item');
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
 const lightboxCaption = document.getElementById('lightbox-caption');
-const galleryItems = document.querySelectorAll('.gallery-item');
 
-// Prevent pinch-to-zoom on lightbox
-document.addEventListener('gesturestart', (e) => {
-    if (lightbox.classList.contains('active')) {
-        e.preventDefault();
-    }
-});
-
-// Add click event listeners to all gallery items
+// Initialize gallery items for interaction
 galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        triggerHorizontalSlideEffect(item);
+    // Add click event to each gallery item
+    item.addEventListener('click', function() {
+        openLightbox(index);
+        
+        // Add 'clicked' class for animation effect
+        this.classList.add('clicked');
+        
+        // Remove the class after animation completes
         setTimeout(() => {
-            openLightbox(index);
-        }, 300);
+            this.classList.remove('clicked');
+        }, 800);
     });
 });
 
-// Function to trigger the horizontal slide effect
-function triggerHorizontalSlideEffect(item) {
-    galleryItems.forEach(item => {
-        item.classList.remove('clicked');
-    });
-    item.classList.add('clicked');
-    setTimeout(() => {
-        item.classList.remove('clicked');
-    }, 800);
-}
-
-// Open Lightbox
+// Open lightbox with specific image
 function openLightbox(index) {
-    currentLightboxIndex = index;
-    updateLightbox();
+    currentImageIndex = index;
+    const item = galleryItems[index];
+    const image = item.querySelector('img');
+    const caption = item.querySelector('.gallery-caption').textContent;
+    
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightboxCaption.textContent = caption;
+    
     lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
 }
 
-// Close Lightbox
+// Close lightbox
 function closeLightbox() {
     lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = ''; // Restore scrolling
 }
 
-// Change Image (Previous/Next)
+// Change image in lightbox
 function changeImage(direction) {
-    currentLightboxIndex += direction;
-    if (currentLightboxIndex >= galleryItems.length) {
-        currentLightboxIndex = 0;
-    } else if (currentLightboxIndex < 0) {
-        currentLightboxIndex = galleryItems.length - 1;
+    currentImageIndex += direction;
+    
+    // Handle wraparound navigation
+    if (currentImageIndex >= galleryItems.length) {
+        currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+        currentImageIndex = galleryItems.length - 1;
     }
-    const contentElement = document.querySelector('.lightbox-content');
-    contentElement.style.animation = 'none';
-    void contentElement.offsetWidth;
-    contentElement.style.animation = direction > 0 ?
-        'slideInFromRight 0.4s ease-out' :
-        'slideInFromLeft 0.4s ease-out';
-    updateLightbox();
-}
-
-// Preload adjacent images
-function preloadAdjacentImages() {
-    const totalImages = galleryItems.length;
-    const prevIndex = (currentLightboxIndex - 1 + totalImages) % totalImages;
-    const nextIndex = (currentLightboxIndex + 1) % totalImages;
-    const preloadPrev = new Image();
-    const preloadNext = new Image();
-    preloadPrev.src = galleryItems[prevIndex].querySelector('img').src;
-    preloadNext.src = galleryItems[nextIndex].querySelector('img').src;
-}
-
-// Update Lightbox Content
-function updateLightbox() {
-    const item = galleryItems[currentLightboxIndex];
-    const img = item.querySelector('img');
+    
+    const item = galleryItems[currentImageIndex];
+    const image = item.querySelector('img');
     const caption = item.querySelector('.gallery-caption').textContent;
-    lightboxImage.src = img.src;
-    lightboxImage.alt = img.alt;
-    lightboxCaption.textContent = caption;
-    preloadAdjacentImages();
+    
+    // Animate image change
+    lightboxImage.style.opacity = '0';
+    setTimeout(() => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightboxCaption.textContent = caption;
+        lightboxImage.style.opacity = '1';
+    }, 200);
 }
 
-// Keyboard Navigation
-document.addEventListener('keydown', (e) => {
+// Keyboard navigation for lightbox
+document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'ArrowLeft') changeImage(-1);
-    else if (e.key === 'ArrowRight') changeImage(1);
-    else if (e.key === 'Escape') closeLightbox();
+    
+    if (e.key === 'Escape') {
+        closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+        changeImage(1);
+    } else if (e.key === 'ArrowLeft') {
+        changeImage(-1);
+    }
 });
 
-// Close Lightbox on Background Click
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+// Close lightbox when clicking outside the image
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
 });
 
-// Touch Swipe Support
+// Prevent touch scrolling when lightbox is open
+lightbox.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+}, { passive: false });
+
+// Add swipe support for mobile devices
 let touchStartX = 0;
 let touchEndX = 0;
 
-lightbox.addEventListener('touchstart', (e) => {
+lightbox.addEventListener('touchstart', function(e) {
     touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
+}, false);
 
-lightbox.addEventListener('touchend', (e) => {
+lightbox.addEventListener('touchend', function(e) {
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
-}, { passive: true });
+}, false);
 
 function handleSwipe() {
-    const swipeThreshold = 50; // Increased sensitivity for mobile
+    const swipeThreshold = 50;
     if (touchEndX < touchStartX - swipeThreshold) {
-        changeImage(1); // Swipe left
+        // Swiped left
+        changeImage(1);
     }
     if (touchEndX > touchStartX + swipeThreshold) {
-        changeImage(-1); // Swipe right
+        // Swiped right
+        changeImage(-1);
     }
 }
 
-// Add CSS animations
-const styleElement = document.createElement('style');
-styleElement.textContent = `
-    @keyframes slideInFromRight {
-        from { transform: translateX(10%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+// Lazy loading enhancement for gallery images
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if Intersection Observer is supported
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const dataSrc = img.getAttribute('data-src');
+                    
+                    if (dataSrc) {
+                        img.src = dataSrc;
+                        img.removeAttribute('data-src');
+                    }
+                    
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        // Find all images with data-src attribute
+        document.querySelectorAll('.gallery-item img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
     }
-
-    @keyframes slideInFromLeft {
-        from { transform: translateX(-10%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-`;
-document.head.appendChild(styleElement);
-
-// Initialize gallery on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const allImages = document.querySelectorAll('.gallery-item img');
-    allImages.forEach(img => {
-        if (!img.src || img.src === '') {
-            img.src = '/api/placeholder/400/500';
-        }
-    });
 });
