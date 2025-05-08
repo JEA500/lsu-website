@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPSA Law Student Union</title>
+    <title>UPSA Law Students’ Union</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">
+        <div class="container header-container" style="justify-content: center; flex-wrap: wrap; text-align: center;">
+            <div class="logo" style="margin: 0 auto;">
                 <div class="logo-image">
                     <img src="images/lsu.jpg" alt="UPSA Law Student Union Logo">
                 </div>
-                <span class="logo-text">UPSA Law Student Union</span>
+                <span class="logo-text" style="display: block;">UPSA LAW STUDENTS’ UNION</span>
             </div>
-            <!-- Toggle Button for Sidebar -->
-            <button class="toggle-sidebar-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
             <!-- Desktop Navigation -->
-            <nav class="desktop-nav">
+            <nav class="desktop-nav" style="width: 100%; text-align: center; margin-top: 10px;">
+                <ul style="display: inline-flex; justify-content: center; gap: 20px; list-style: none; padding: 0;">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="index.html#team">Executive Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="apply.html">Admissions</a></li>
+                </ul>
+            </nav>
+            <!-- Sidebar Toggle Button -->
+            <button class="toggle-sidebar-btn"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="sidebar">
+            <button class="close-sidebar-btn"><i class="fas fa-times"></i></button>
+            <nav class="sidebar-nav">
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
@@ -37,37 +49,18 @@
             </nav>
         </div>
     </header>
-    
-    <!-- Sidebar for Mobile -->
-    <aside class="sidebar" id="sidebar" aria-hidden="true">
-        <button class="close-sidebar-btn" aria-label="Close navigation menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#events">Events</a></li>
-                <li><a href="index.html#team">Executive Team</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="apply.html">Admissions</a></li>
-            </ul>
-        </nav>
-    </aside>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-    <div class="container hero-content">
-        <h1>Welcome to UPSA Law Student Union</h1>
-        <p>Advocating for justice, promoting legal excellence, and building a supportive community of future legal professionals.</p>
-        <div class="hero-buttons">
-            <a href="#about" class="btn btn-primary">Learn More</a>
-            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        <div class="container hero-content">
+            <h1>Welcome to UPSA Law Student Union</h1>
+            <p>Advocating for justice, promoting legal excellence, and building a supportive community of future legal professionals.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- About Section -->
     <section class="section" id="about">
@@ -87,63 +80,61 @@
         </div>
     </section>
 
-<!-- Services Section -->
-<section class="section services" id="services">
-    <div class="container">
-        <h2 class="section-title">What We Offer</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">📚</div>
-                <h3>Academic Support</h3>
-                <p>(Makola Aid Initiative and Resit Success Initiative)</p>
-                <p>The Makola Aid Initiative aims to prepare UPSA law students for the Makola entrance exam. The alumni serve as tutors who help in preparing the students for the Makola entrance exam. This program will be completely free, as it is designed to be highly effective to help increase the success rate for entry into Makola.</p>
-                <p>The Resit Success initiative is designed to support students who are retaking a course. There will be peer-to-peer tutoring sessions carefully scheduled to help a resit student find their feet. Along with academic support, emotional support will be offered through the UPSA Counseling Unit to help resit students stay motivated and manage stress during their journey. All information will remain confidential for those enrolled in the program as the means of signing up is through a Google form.</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIkzOZPnrQQMDtFTrE3PJhHRV_qYJQepi4RwpIlpYjf6cctQ/viewform?usp=sharing" class="btn btn-primary" style="margin-top: 15px;">Enroll in Resit Success</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">👨‍⚖️</div>
-                <h3>Moot Society</h3>
-                <p>The Mooting Society is dedicated to developing students’ advocacy, legal research, and oral presentation skills through simulated court proceedings. The Society organizes various activities, including workshops and the prestigious Inter-firm Moot Competition, where students compete in firms, simulating real-world legal practice. There are currently five firms you can join on campus which are Sikafuturo, Eyison Dei Amoah & Associates, Keelson Dzeketey & Associates, Arthur Brown & Associates, and Afari Asamoah & Associates.</p>
-                <a href="law.html" class="btn btn-primary" style="margin-top: 15px;">Explore Our Law Firms</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚖️</div>
-                <h3>Legal Clinic</h3>
-                <p>The UPSA LAW SCHOOL Legal Clinic serves as a bridge between the legal community and the public, offering pro bono legal assistance, education, and advocacy. Our team of passionate law students and experienced legal practitioners work together to advance access to justice and empower individuals through knowledge.</p>
-                <p>Your sponsorship will enable us to reach more communities, support our legal outreach programs, and train future leaders of justice. Join us in making a lasting impact.</p>
-                <p><strong>Contact Us:</strong></p>
-                <p>Phone: 0550523928</p>
-                <p>Email: <a href="/cdn-cgi/l/email-protection#abdedbd8cac7cadcd8c8c3c4c4c7c7cecccac7c8c7c2c5c2c8ebccc6cac2c785c8c4c6"><span class="__cf_email__" data-cfemail="eb9e9b988a878a9c988883848487878e8c8a87888782858288ab8c868a8287c5888486">[email&#160;protected]</span></a></p>
-                <a href="#contact" class="btn btn-primary" style="margin-top: 15px;">Support the Clinic</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>Juris & Jots</h3>
-                <p>Juris & Jots is designed to equip students with essential writing skills while blending legal precision with creative expression. Writing is at the core of legal education and practice, and this initiative will provide students with structured training in legal research, advocacy writing, and opinion drafting in collaboration with publication platforms such as the Law Platform and Dennislaw coupled with the participation in both internal and international legal writing competitions.</p>
-                <a href="Juris" class="btn btn-primary" style="margin-top: 15px;">Submit your Article</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">👩‍🎓</div>
-                <h3>Alumni</h3>
-                <p>The alumni of UPSA Law School comprises all former students who were once enrolled in and pursued legal studies at the institution. They play a vital role in supporting the growth and success of the institution. They generously assist with various student initiatives through their expertise and funding. The alumni also provide valuable mentorship to current students.</p>
-                <a href="alumni.html" class="btn btn-primary" style="margin-top: 15px;">Connect with Alumni</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎉</div>
-                <h3>Social Activities</h3>
-                <p>The Law Students’ Union (LSU) organizes a range of social activities to create memorable experiences beyond academics. These include the annual LSU Dinner, “Rep Your School” day, “Old School Night,” the Inter-Law Faculty Debate, and various sporting events. Through these activities, law students release tension and build lasting connections.</p>
-                <a href="social-activities.html" class="btn btn-primary" style="margin-top: 15px;">Join an Event</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📖</div>
-                <h3>Prof Abotsi Legal Bank</h3>
-                <p>This is a premier digital resource designed to support students, legal practitioners, and academics with a rich collection of carefully curated reading materials and landmark legal cases. Built with the vision of making legal research more accessible and efficient, our platform brings together essential texts, case law, and commentary across various areas of law.</p>
-                <p>Prof Abotsi Legal Bank offers a user-friendly interface and a well-organized database to help you find exactly what you need, when you need it. With materials selected by legal experts and updated regularly, you can trust that you're working with authoritative and relevant content.</p>
-                <a href="https://drive.google.com/drive/folders/13ec0ohuMXCDbeKy1RkLeEPaZkjQ3qnRI?usp=sharing" class="btn btn-primary" style="margin-top: 15px;">Access Legal Bank</a>
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>Academic Support</h3>
+                    <p>(Makola Aid Initiative and Resit Success Initiative)</p>
+                    <p>The Makola Aid Initiative aims to prepare UPSA law students for the Makola entrance exam. The alumni serve as tutors who help in preparing the students for the Makola entrance exam. This program will be completely free, as it is designed to be highly effective to help increase the success rate for entry into Makola.</p>
+                    <p>The Resit Success initiative is designed to support students who are retaking a course. There will be peer-to-peer tutoring sessions carefully scheduled to help a resit student find their feet. Along with academic support, emotional support will be offered through the UPSA Counseling Unit to help resit students stay motivated and manage stress during their journey. All information will remain confidential for those enrolled in the program as the means of signing up is through a Google form.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIkzOZPnrQQMDtFTrE3PJhHRV_qYJQepi4RwpIlpYjf6cctQ/viewform?usp=sharing" class="btn btn-primary" style="margin-top: 15px;">Enroll in Resit Success</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍⚖️</div>
+                    <h3>Moot Society</h3>
+                    <p>The Mooting Society is dedicated to developing students’ advocacy, legal research, and oral presentation skills through simulated court proceedings. The Society organizes various activities, including workshops and the prestigious Inter-firm Moot Competition, where students compete in firms, simulating real-world legal practice. There are currently five firms you can join on campus which are Sikafuturo, Eyison Dei Amoah & Associates, Keelson Dzeketey & Associates, Arthur Brown & Associates, and Afari Asamoah & Associates.</p>
+                    <a href="law.html" class="btn btn-primary" style="margin-top: 15px;">Explore Our Law Firms</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Legal Clinic</h3>
+                    <p>The UPSA LAW SCHOOL Legal Clinic serves as a bridge between the legal community and the public, offering pro bono legal assistance, education, and advocacy. Our team of passionate law students and experienced legal practitioners work together to advance access to justice and empower individuals through knowledge.</p>
+                    <p>Your sponsorship will enable us to reach more communities, support our legal outreach programs, and train future leaders of justice. Join us in making a lasting impact.</p>
+                    <p><strong>Contact Us:</strong></p>
+                    <p>Phone: 0550523928</p>
+                    <p>Email:<span>upsalsuhelpline@gmail.com</span></a></p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 15px;">Support the Clinic</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Juris & Jots</h3>
+                    <p>Juris & Jots is designed to equip students with essential writing skills while blending legal precision with creative expression. Writing is at the core of legal education and practice, and this initiative will provide students with structured training in legal research, advocacy writing, and opinion drafting in collaboration with publication platforms such as the Law Platform and Dennislaw coupled with the participation in both internal and international legal writing competitions.</p>
+                    <a href="Juris" class="btn btn-primary" style="margin-top: 15px;">Submit your Article</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👩‍🎓</div>
+                    <h3>Alumni</h3>
+                    <p>The alumni of UPSA Law School comprises all former students who were once enrolled in and pursued legal studies at the institution. They play a vital role in supporting the growth and success of the institution. They generously assist with various student initiatives through their expertise and funding. The alumni also provide valuable mentorship to current students.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎉</div>
+                    <h3>Social Activities</h3>
+                    <p>The Law Students’ Union (LSU) organizes a range of social activities to create memorable experiences beyond academics. These include the annual LSU Dinner, “Rep Your School” day, “Old School Night,” the Inter-Law Faculty Debate, and various sporting events. Through these activities, law students release tension and build lasting connections.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📖</div>
+                    <h3>Prof Abotsi Legal Bank</h3>
+                    <p>This is a premier digital resource designed to support students, legal practitioners, and academics with a rich collection of carefully curated reading materials and landmark legal cases. Built with the vision of making legal research more accessible and efficient, our platform brings together essential texts, case law, and commentary across various areas of law.</p>
+                    <p>Prof Abotsi Legal Bank offers a user-friendly interface and a well-organized database to help you find exactly what you need, when you need it. With materials selected by legal experts and updated regularly, you can trust that you're working with authoritative and relevant content.</p>
+                    <a href="https://drive.google.com/drive/folders/13ec0ohuMXCDbeKy1RkLeEPaZkjQ3qnRI?usp=sharing" class="btn btn-primary" style="margin-top: 15px;">Access Legal Bank</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Events Section -->
     <section class="section" id="events">
@@ -208,7 +199,7 @@
                     <div class="member-info">
                         <h3 class="member-name">Bernard Kwaku Owusu</h3>
                         <p class="member-role">President</p>
-                        <p>I am proud to represent our student community and work towards creating a more inclusive, engaging, and supportive environment for everyone and everyone. whether youre looking to get involved, need support, or just want to connect, the L.S.U is here for you.</p>
+                        <p><b>I am proud to represent our student community and work toward creating a more inclusive, engaging, and supportive environment for all. Whether you’re looking to get involved, need support, or simply want to connect, the L.S.U. is here for you.</b></p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/bernard-owusu-57595826a/" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -221,7 +212,7 @@
                     <div class="member-info">
                         <h3 class="member-name">Jozette Osei</h3>
                         <p class="member-role">Vice President</p>
-                        <p>My name is Jozette Osei and i currently serve as the vice President of the UPSA law students Union. I am a committed christian, an attentive listener, and naturally warm and approachable.</p>
+                        <p><b>My name is Jozette Osei, and I currently serve as the Vice President of the UPSA Law Students’ Union. I am a committed Christian, an attentive listener, and naturally warm and approachable.</b></p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/jozette-o-97b9b6303/" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -234,7 +225,7 @@
                     <div class="member-info">
                         <h3 class="member-name">Dilys Lucy Naa Otobia Quao</h3>
                         <p class="member-role">Organizing Secretary</p>
-                        <p>I am goal driven and passionate about my endeavours. i value integrity, responsibility, trust and reliance.</p>
+                        <p><b>I am goal driven and passionate about my endeavours. i value integrity, responsibility, trust and reliance.</b></p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/dilys-quao-1291a6298/" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -247,7 +238,7 @@
                     <div class="member-info">
                         <h3 class="member-name">Loretta Seyram</h3>
                         <p class="member-role">General Secretary</p>
-                        <p>I am an industrious L300 student.I am very passionate about making a different and leaving footprints wherever i go and it has  lead to me taking on the role of General Secretary of the UPSA law school.</p>
+                        <p><b>I am an industrious L300 student.I am very passionate about making a different and leaving footprints wherever i go and it has  lead to me taking on the role of General Secretary of the UPSA law school.</b></p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/loretta-ahiable-2b864a280/" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -260,7 +251,7 @@
                     <div class="member-info">
                         <h3 class="member-name">Prosper Yendeeba Namm-oni</h3>
                         <p class="member-role">Treasurer</p>
-                        <p>My name is Prosper Yendeeba Namm-oni, a level 300 student of UPSA. I am deeply committed to contributing meaningfully to the growth and success of our union by ensuring transparency, accountability, and innovation in our financial affairs. Beyond my professional responsibilities, I have a deep passion for community engagement and an interest in student affairs.</p>
+                        <p><b>My name is Prosper Yendeeba Namm-oni, a level 300 student of UPSA. I am deeply committed to contributing meaningfully to the growth and success of our union by ensuring transparency, accountability, and innovation in our financial affairs. Beyond my professional responsibilities, I have a deep passion for community engagement and an interest in student affairs.</b></p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/prosper-yendeeba-b637b9255/" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -306,7 +297,7 @@
                         <div class="detail-icon">✉️</div>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="/cdn-cgi/l/email-protection#fa8f8a899b969b8d899992959596969f9d9b96999693949399ba9d979b9396d4999597"><span class="__cf_email__" data-cfemail="42373231232e233531212a2d2d2e2e2725232e212e2b2c2b2102252f232b2e6c212d2f">[email&#160;protected]</span></a></p>
+                            <p><span>upsalsuhelpline@gmail.com</span></a></p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -345,9 +336,12 @@
 
     <footer>
         <div class="footer-brand-section">
+            <div class="footer-background image">
+                <img src="images/footer-background.jpg" alt="footer-background">
+            </div>
             <div class="container">
                 <div class="footer-column">
-                    <h3>UPSA Law Student Union</h3>
+                    <h3>UPSA Law Students’ Union</h3>
                     <p>Promoting legal excellence and building a community of future legal professionals.</p>
                 </div>
             </div>
@@ -390,12 +384,12 @@
                     </div>
                 </div>
                 <div class="copyright">
-                    <p>© 2025 UPSA Law Student Union. All rights reserved.</p>
+                    <p>© 2025 UPSA Law Students’ Union. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'938a729b2ce4ee0a',t:'MTc0NjA1MTg0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-<script src="js/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
 </html>

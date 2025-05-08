@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPSA Law Student Union - Gallery</title>
+    <title>UPSA LAW STUDENTS’ UNION - Gallery</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/gallery.css"> <!-- Link to the enhanced gallery CSS -->
+    <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">
+        <div class="container header-container" style="justify-content: center; flex-wrap: wrap; text-align: center;">
+            <div class="logo" style="margin: 0 auto;">
                 <div class="logo-image">
                     <img src="images/lsu.jpg" alt="UPSA Law Student Union Logo">
                 </div>
-                <span class="logo-text">UPSA Law Student Union</span>
+                <span class="logo-text" style="display: block;">UPSA LAW STUDENTS’ UNION</span>
             </div>
-            <!-- Toggle Button for Sidebar -->
-            <button class="toggle-sidebar-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <!-- Sidebar Toggle Button -->
+            <button class="toggle-sidebar-btn" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
             <!-- Desktop Navigation -->
-            <nav class="desktop-nav">
-                <ul>
+            <nav class="desktop-nav" style="width: 100%; text-align: center; margin-top: 10px;">
+                <ul style="display: inline-flex; justify-content: center; gap: 20px; list-style: none; padding: 0;">
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#services">Services</a></li>
@@ -37,12 +37,10 @@
             </nav>
         </div>
     </header>
-    
-    <!-- Sidebar for Mobile -->
-    <aside class="sidebar" id="sidebar" aria-hidden="true">
-        <button class="close-sidebar-btn" aria-label="Close navigation menu">
-            <i class="fas fa-times"></i>
-        </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="close-sidebar-btn">&times;</button>
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="index.html#home">Home</a></li>
@@ -55,7 +53,7 @@
                 <li><a href="apply.html">Admissions</a></li>
             </ul>
         </nav>
-    </aside>
+    </div>
 
     <!-- Gallery Section -->
     <section class="section" id="gallery">
@@ -113,19 +111,19 @@
                 <!-- Additional 10 image slots -->
                 <div class="gallery-item">
                     <img src="images/mooting1.jpg" alt="Mooting">
-                    <div class="gallery-caption">Mooting Society</div>
+                    <div class="gallery-caption">Legal Field Trip</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/mooting2.jpg" alt="Mooting Society">   
-                    <div class="gallery-caption">Mooting Society</div>
+                    <div class="gallery-caption">Legal Field Trip</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/mooting3.jpg" alt="Mooting Society">
-                    <div class="gallery-caption">Mooting Society</div>
+                    <div class="gallery-caption">Legal Field Trip</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/mooting5.jpg" alt="Mooting Society">
-                    <div class="gallery-caption">Mooting Society</div>
+                    <div class="gallery-caption">Legal Field Trip</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/mooting6.jpg" alt="Mooting Society">
@@ -171,7 +169,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>UPSA Law Student Union</h3>
+                    <h3>UPSA Law Students’ Union</h3>
                     <p>Promoting legal excellence and building a community of future legal professionals.</p>
                 </div>
                 <div class="footer-column">
@@ -180,6 +178,7 @@
                         <li><a href="index.html#home">Home</a></li>
                         <li><a href="index.html#about">About Us</a></li>
                         <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#events">Events</a></li>
                         <li><a href="index.html#team">Team</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
@@ -228,7 +227,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2025 UPSA Law Student Union. All rights reserved.</p>
+                <p>© 2025 UPSA Law Students’ Union. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -236,5 +235,6 @@
     <script src="js/script.js"></script>
     <script src="js/gallery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93b4deddf867bfbd',t:'MTc0NjQ5NjY4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
